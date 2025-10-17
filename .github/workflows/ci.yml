@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Type & component checks
+        run: npm run check
+
+      - name: Unit tests (Vitest)
+        run: npm run test:unit
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: E2E tests (Playwright)
+        run: npm run test:e2e
+
+      - name: Build project
+        run: npm run build
+
+      - name: Accessibility audit (pa11y)
+        run: |
+          npm run preview -- --host 0.0.0.0 --port 4173 &
+          SERVER_PID=$!
+          npx wait-on http://127.0.0.1:4173
+          npm run test:a11y
+          kill $SERVER_PID

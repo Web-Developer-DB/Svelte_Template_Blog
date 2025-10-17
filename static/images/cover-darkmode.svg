@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#darkGradient)" />
+  <circle cx="280" cy="190" r="120" fill="#facc15" opacity="0.15" />
+  <path d="M520 110a80 80 0 1 0 0 160 64 64 0 1 1 0-160z" fill="#f8fafc" opacity="0.9" />
+  <text x="50%" y="85%" font-size="34" fill="#e5e7eb" font-family="Inter, sans-serif" text-anchor="middle">
+    Light & Dark Mode
+  </text>
+</svg>

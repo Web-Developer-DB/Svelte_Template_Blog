@@ -1,0 +1,72 @@
+---
+layout: blog
+title: "Responsives Design mit Tailwind und Container-Queries"
+date: "2025-01-22"
+tags:
+  - responsive
+  - tailwindcss
+  - container
+topics:
+  - CSS
+  - Responsive
+excerpt: "Ein praxisnaher Leitfaden, wie du fluides Typography, Container-Queries und moderne Tailwind-Utilities kombinierst."
+cover: "/images/cover-responsive.svg"
+---
+
+<script>
+  let containerWidth = 320;
+</script>
+
+In Workshops taucht ständig die Frage auf, ob Tailwind nicht „zu starr“ für echtes Responsive Design sei. Dieser Beitrag zeigt das Gegenteil: Wir kombinieren **Fluid Typography**, **Container-Queries** und Utility-First-Klassen, um Layouts wirklich adaptiv zu bauen. Das Wissen brauchst du später, wenn du die Komponenten dieses Templates erweitern möchtest.
+
+## Fluid Typography
+
+Die globale CSS-Datei definiert für `<html>` eine dynamische Schriftgröße:
+
+```css
+html {
+  font-size: clamp(15px, 0.95vw + 0.5rem, 18px);
+}
+```
+
+`clamp()` verbindet eine Minimal-, eine bevorzugte und eine Maximalgröße. Dadurch wächst der Text fließend mit Viewport-Breite – ganz ohne Medienabfragen. Du kannst denselben Ansatz für Abstände verwenden, z. B. `padding: clamp(1rem, 2vw, 2.5rem);`.
+
+## Container-Queries
+
+Tailwind bringt seit Version 3.2 das Plugin `@tailwindcss/container-queries` mit. Damit bekommst du Utilities wie `@container` und `@lg:`, die sich auf Containerbreiten statt auf Viewports beziehen. In `ContentCard.svelte` könntest du damit experimentieren:
+
+```svelte
+<div class="@container">
+  <p class="@lg:text-lg">
+    Dieser Text wird größer, sobald die Karte breiter als 48rem wird.
+  </p>
+</div>
+```
+
+Die Vorteile spürst du besonders bei verschachtelten Layouts, in denen Komponenten in unterschiedlichen Kontexten erscheinen. Du musst nicht mehr raten, wie groß der gesamte Viewport ist, sondern reagierst granular auf den Platz der Komponente.
+
+## Interaktives Beispiel
+
+<div class="my-6 rounded-xl border border-muted/30 bg-surface/80 p-4">
+  <label class="flex items-center gap-3 text-sm text-muted/80">
+    Container-Breite ({containerWidth}px)
+    <input type="range" min="240" max="860" bind:value={containerWidth} />
+  </label>
+  <div
+    class="@container mt-4 rounded-lg bg-accent/10 p-4 transition-all"
+    style={`width: ${containerWidth}px`}
+  >
+    <p class="@md:text-lg @xl:text-xl text-sm leading-relaxed text-emphasis">
+      Beobachte, wie sich die Schriftgröße und die Abstände verändern, sobald die Container-Breite
+      bestimmte Schwellen übersteigt. Das ist der Kern von komponentengetriebenem Responsive Design.
+    </p>
+  </div>
+</div>
+
+## Takeaways
+
+1. **Fluid Typography** reduziert harte Breakpoints.
+2. **Container-Queries** machen Komponenten resilient gegenüber Kontextwechseln.
+3. **Tailwind Utilities** generieren den CSS-Code für dich – du musst nur das Konzept verstehen.
+
+Experimentiere im Projekt: Passe das Layout der Blog-Liste an und dokumentiere deine Schritte. Genau dafür ist dieses Template gedacht. Es hilft dir, moderne CSS-Techniken sicher anzuwenden.

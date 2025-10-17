@@ -1,0 +1,22 @@
+<!--
+  @file src/app.html
+  @description Grundgerüst des HTML-Dokuments, das SvelteKit als Template
+  verwendet. Hier platzieren wir Meta-Tags für Progressive Enhancement sowie
+  CSS-Variable-Fallbacks für das Themingsystem. Kommentare helfen zu verstehen,
+  welche Platzhalter SvelteKit beim Rendern ersetzt.
+-->
+<!DOCTYPE html>
+<html lang="de" data-theme="system">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primäre Theme-Farbe, wird durch Skript dynamisch überschrieben -->
+    <meta name="theme-color" content="#ffffff" />
+    <!-- SvelteKit injiziert hier die gebündelten Styles -->
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>

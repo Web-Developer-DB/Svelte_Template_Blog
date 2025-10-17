@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="hashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#hashGradient)" />
+  <text x="50%" y="48%" font-size="160" fill="#fff7ed" font-family="Inter, sans-serif" text-anchor="middle">
+    #
+  </text>
+  <text x="50%" y="80%" font-size="36" fill="#ffedd5" font-family="Inter, sans-serif" text-anchor="middle">
+    Auto-Hashtags
+  </text>
+</svg>
