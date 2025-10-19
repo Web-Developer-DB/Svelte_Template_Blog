@@ -45,7 +45,7 @@ Das Ergebnis landet in `post.autoHashtags`. In der UI werden manuelle Tags und A
 1. **Entwurf schreiben:** Lege die Datei in `/content/blog` an.
 2. **Metadaten pflegen:** Achte auf Datum, Tags, Topics und `layout`.
 3. **Lokale Vorschau:** `npm run dev` und Seite `http://localhost:5173/blog/<slug>`.
-4. **Tests ausführen:** `npm run test` bevor du pushst.
+4. **Build prüfen:** `npm run build` bevor du pushst.
 
 ## Häufige Fehler
 

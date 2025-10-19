@@ -28,8 +28,14 @@ const mdsvexConfig = {
       remarkAutolinkHeadings,
       {
         behavior: 'append',
+        content: {
+          type: 'text',
+          value: '#'
+        },
         linkProperties: {
-          class: 'heading-anchor'
+          class: 'heading-anchor',
+          'aria-label': 'Direktlink zu dieser Überschrift',
+          title: 'Direktlink zu dieser Überschrift'
         }
       }
     ]

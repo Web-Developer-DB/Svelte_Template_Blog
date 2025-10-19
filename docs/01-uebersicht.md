@@ -10,14 +10,13 @@ Dieses Dokument ist dein Startpunkt. Es erklärt Zielsetzung, Technik-Stack und 
 
 - **Sofort lauffähig:** `npm install && npm run dev`
 - **Didaktisch aufbereitet:** Jeder Code besitzt Datei-Header und Inline-Kommentare.
-- **Produktionsnahe Features:** Theming, Suche, SEO, Tests, CI.
+- **Produktionsnahe Features:** Theming, Suche, SEO und Deployment.
 
 ## Tech-Stack auf einen Blick
 
 ```
 SvelteKit  •  TypeScript strict  •  Tailwind 3
-MDsveX     •  Fuse.js            •  Vitest & Playwright
-axe/pa11y  •  @sveltejs/adapter-vercel
+MDsveX     •  Fuse.js            •  @sveltejs/adapter-vercel
 ```
 
 ## Architektur-Diagramm
@@ -29,7 +28,6 @@ axe/pa11y  •  @sveltejs/adapter-vercel
 │  ├─ lib/      → Komponenten + Content-Logik  │
 │  └─ styles/   → globale CSS-Variablen        │
 │ content/      → Markdown, MDsveX, Svelte      │
-│ tests/        → Vitest & Playwright          │
 │ docs/         → Lernunterlagen               │
 └──────────────────────────────────────────────┘
 ```
@@ -39,8 +37,7 @@ axe/pa11y  •  @sveltejs/adapter-vercel
 1. **Lesen:** Arbeite die Dateien in `/docs` der Reihenfolge nach durch.
 2. **Experimentieren:** Passe Komponenten in `src/lib/components` an.
 3. **Analysieren:** Untersuche `src/lib/content/index.ts`, um Content-Scanning zu verstehen.
-4. **Testen:** Führe `npm run test` aus und beobachte Vitest/Playwright/pa11y.
-5. **Erweitern:** Schreibe eigene Posts in `/content/blog`.
+4. **Erweitern:** Schreibe eigene Posts in `/content/blog`.
 
 ## Nächste Schritte
 

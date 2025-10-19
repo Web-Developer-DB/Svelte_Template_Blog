@@ -1,21 +1,14 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    "types": ["vitest/globals", "vite/client"],
-    "paths": {
-      "$lib/*": ["src/lib/*"],
-      "$components/*": ["src/lib/components/*"],
-      "$content/*": ["src/lib/content/*"],
-      "$styles/*": ["src/styles/*"]
-    }
+    "types": ["vite/client"]
   },
   "include": [
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.svelte",
     "src/**/*.svx",
-    "src/**/*.md",
-    "tests/**/*.ts"
+    "src/**/*.md"
   ],
   "exclude": ["node_modules"]
 }

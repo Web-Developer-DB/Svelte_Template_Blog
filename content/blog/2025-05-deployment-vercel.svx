@@ -1,0 +1,50 @@
+---
+layout: blog
+title: "Deployment auf Vercel: Von `npm run build` zur Live-Site"
+date: "2025-05-22"
+tags:
+  - deployment
+  - vercel
+  - ci
+topics:
+  - Deployment
+excerpt: "Schritt-für-Schritt-Anleitung, wie du dieses Template auf Vercel ausrollst – inklusive CI-Setup und Tipps für Preview-Umgebungen."
+cover: "/images/cover-vercel.svg"
+---
+
+Vercel ist der natürliche Partner für SvelteKit, weil das Framework vom selben Team entwickelt wird. Dieser Artikel zeigt dir, wie du das Template deployest, Preview-Umgebungen einrichtest und Continuous Integration mit GitHub Actions kombinierst. Ziel ist, dass du den kompletten Prozess automatisierst.
+
+## Projekt vorbereiten
+
+1. Stelle sicher, dass dein Repository auf GitHub liegt. Vercel synchronisiert sich per OAuth mit deinem Account.
+2. Prüfe, dass `siteConfig.url` auf die finale Domain zeigt – sonst generieren RSS und Sitemap falsche Links.
+3. Führe `npm run build` lokal aus. So erkennst du Build-Fehler, bevor Vercel sie melden muss.
+
+## Deployment-Schritte
+
+```bash
+# Projekt auf Vercel initialisieren
+vercel login
+vercel link
+
+# Ersten Build im Preview-Modus deployen
+vercel --prebuilt
+```
+
+Der Flag `--prebuilt` nutzt dein lokales `npm run build`-Ergebnis. Im CI kannst du `vercel build` verwenden, um den Build auf Vercel auszuführen. Standardmäßig legt Vercel eine Preview-URL pro Pull Request an – ideal, um Änderungen im Team zu testen.
+
+## Environment-Variablen
+
+Dieses Template benötigt keine Secrets, aber du kannst in Vercel `Environment Variables` hinterlegen (z. B. API-Keys). Lege sie für *Production*, *Preview* und *Development* separat an. In SvelteKit greifst du über `env`-Module auf die Werte zu.
+
+## CI integrieren
+
+Die GitHub-Action (`.github/workflows/ci.yml`) führt Checks aus. Ergänze einen Deployment-Schritt, der nach erfolgreichem Build `vercel deploy --prebuilt` startet. Du kannst auch Preview-Deployments automatisch kommentieren lassen, indem du das `vercel-action` GitHub-Action verwendest.
+
+## Monitoring & Rollbacks
+
+Vercel bietet ein Aktivitätslog mit Deployments. Jeder Build erhält einen eindeutigen Hash. Wenn etwas schiefgeht, aktiviere die gewünschte Version per „Promote to Production“. Für Logging kannst du Vercel Analytics oder externe Tools (Logflare, Sentry) nutzen.
+
+## Fazit
+
+Deployment sollte kein Stress sein. Mit SvelteKit + Vercel erreichst du wenige Minuten Time-to-Live: Push → Checks → Preview → Merge → Produktion. Dokumentiere deinen Prozess in der README, damit niemand raten muss, welche Befehle notwendig sind. So schafft ihr ein reproduzierbares Setup, das auch neue Teammitglieder schnell verstehen.

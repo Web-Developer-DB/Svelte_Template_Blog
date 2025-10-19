@@ -48,9 +48,11 @@
     }
   };
 
-  $: urlQuery = $page.url.searchParams.get('query') ?? '';
-  $: if (urlQuery !== query) {
-    runSearch(urlQuery, false);
+  $: if (!import.meta.env.SSR) {
+    const urlQuery = $page.url.searchParams.get('query') ?? '';
+    if (urlQuery !== query) {
+      runSearch(urlQuery, false);
+    }
   }
 </script>
 

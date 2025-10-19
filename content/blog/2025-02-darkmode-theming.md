@@ -50,7 +50,7 @@ Das wirkt drastisch, verhindert aber Trigger bei vestibulären Einschränkungen.
 
 ## Trade-offs
 
-- Der Toggle setzt `window.scrollTo({ behavior: 'smooth' })`, wodurch `prefers-reduced-motion` greifen sollte. Teste das mit dem Playwright-Skript!
+- Der Toggle setzt `window.scrollTo({ behavior: 'smooth' })`, wodurch `prefers-reduced-motion` greifen sollte. Prüfe das in deinem Browser mit aktivierter Einstellung.
 - `localStorage` existiert nur im Browser. Deshalb läuft die Initialisierung in `onMount`.
 - `themeColors` definieren wir als konstantes Mapping in TypeScript. Wenn du neue Themes hinzufügst, vergiss nicht, die Meta-Farben anzupassen.
 

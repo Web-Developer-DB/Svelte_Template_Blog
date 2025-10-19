@@ -19,7 +19,6 @@
 
 <article
   class="group flex flex-col gap-4 rounded-xl border border-muted/30 bg-surface/70 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-  data-testid="content-card"
 >
   <!-- Titel + Link -->
   <header>

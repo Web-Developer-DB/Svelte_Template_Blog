@@ -12,28 +12,15 @@ excerpt: "Wie du Accessibility-Checks automatisierst und welche manuellen Tests 
 cover: "/images/cover-a11y.svg"
 ---
 
-Barrierefreiheit ist kein Häkchen auf einer Liste, sondern ein kontinuierlicher Prozess. Dennoch helfen automatisierte Tools, typische Fehler schnell aufzuspüren. Dieses Template integriert **axe** (über `axe-playwright`) und **pa11y-ci**, damit du Accessibility bereits in der CI prüfst.
+Barrierefreiheit ist kein Häkchen auf einer Liste, sondern ein kontinuierlicher Prozess. Dennoch helfen automatisierte Tools, typische Fehler schnell aufzuspüren. Dieses Template konzentriert sich auf Content und Theming; für automatisierte Accessibility-Checks kannst du bei Bedarf Tools wie **axe** oder **pa11y** ergänzen.
 
-## Axe + Playwright
+## Axe im Alltag
 
-In `tests/e2e/search.spec.ts` importieren wir `axe`. Nach dem Navigieren führen wir `await checkA11y(page);` aus. Dadurch wird die aktuelle Seite gegen WCAG 2.1 AA geprüft. Achte darauf, dass du `aria-labels`, Landmarks und Kontraste korrekt setzt – sonst meldet axe Probleme.
+Nutze die Browser-Erweiterung „axe DevTools“ oder den CLI-Befehl `npx axe https://example.com`, um Seiten gegen WCAG 2.1 AA zu prüfen. So erkennst du schnell Probleme bei Landmark-Struktur, Kontrast oder ARIA-Attributen. Für wiederkehrende Prüfungen kannst du eine Playwright-Suite mit `axe-playwright` aufsetzen – installiere dafür `@playwright/test` und `axe-playwright` als Dev-Abhängigkeiten und führe Checks im Headless-Browser aus.
 
-### Beispiel
+## Pa11y manuell
 
-```ts
-import { test } from '@playwright/test';
-import { injectAxe, checkA11y } from 'axe-playwright';
-
-test('Homepage ist a11y-safe', async ({ page }) => {
-  await page.goto('/');
-  await injectAxe(page);
-  await checkA11y(page);
-});
-```
-
-## Pa11y-CI
-
-`pa11y-ci` läuft über `npm run test:a11y`. Die Konfigurationsdatei (`.pa11yci`) definiert URLs und Schwellenwerte. Pa11y rendert Seiten mit einem Headless-Browser, ähnlich wie axe, und meldet Verstöße. Kombiniere beide Tools, um hohe Abdeckung zu erreichen.
+`pa11y` lässt sich ebenfalls via CLI starten: `npx pa11y http://localhost:5173`. Die Auswertung listet Verstöße mit CSS-Selektor und Beschreibung auf. In CI-Pipelines kannst du `pa11y-ci` mit einer JSON-Konfiguration verwenden, falls du Accessibility automatisiert beobachten möchtest.
 
 ## Manuelle Tests
 
@@ -47,4 +34,4 @@ Automatisierung ersetzt nicht das manuelle Testen. Prüfe zusätzlich:
 
 Beschreibe im README, wie du Accessibility testest. Verlinke Checklisten (z. B. WCAG-Quickref) und notiere bekannte Einschränkungen. Wenn du bewusst ein zugelassenes Pattern nutzt (z. B. Disclosure), verweise auf die WAI-ARIA-Authoring Practices.
 
-Barrierefreiheit ist Teamarbeit. Mit automatisierten Tests stellst du sicher, dass neue Änderungen keine Regressionen einführen. Mit manuellen Tests verstehst du die Perspektive deiner Nutzer. Beides gehört zusammen.
+Barrierefreiheit ist Teamarbeit. Automatisierte Checks spüren Regressionen auf, manuelle Tests vermitteln die Perspektive deiner Nutzer:innen. Beides gehört zusammen.

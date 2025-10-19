@@ -11,19 +11,21 @@
 
 /* ── Abschnitt: CSS-Variablen für Theme und Motion-Preferences */
 :root {
-  --color-surface: 245 245 250;
-  --color-muted: 99 102 241;
-  --color-accent: 79 70 229;
-  --color-emphasis: 17 24 39;
+  /* Helles Thema: hohe Kontraste zwischen Text- und Hintergrundfarben sichern */
+  --color-surface: 247 248 253; /* #F7F8FD */
+  --color-muted: 107 114 128; /* #6B7280 */
+  --color-accent: 37 81 187; /* #2551BB */
+  --color-emphasis: 15 23 42; /* #0F172A */
   color-scheme: light;
   font-feature-settings: 'rlig' 1, 'calt' 1;
 }
 
 [data-theme='dark'] {
-  --color-surface: 15 23 42;
-  --color-muted: 129 140 248;
-  --color-accent: 165 180 252;
-  --color-emphasis: 226 232 240;
+  /* Dunkles Thema: helle Typo auf dunklen Flächen, Akzent bleibt kräftig */
+  --color-surface: 9 13 28; /* #090D1C */
+  --color-muted: 160 174 192; /* #A0AEC0 */
+  --color-accent: 106 132 255; /* #6A84FF */
+  --color-emphasis: 240 245 255; /* #F0F5FF */
   color-scheme: dark;
 }
 
@@ -60,6 +62,8 @@ body {
 .heading-anchor {
   opacity: 0;
   margin-left: 0.35rem;
+  color: rgb(var(--color-accent) / 0.85);
+  text-decoration: none;
   transition: opacity 0.2s ease;
 }
 

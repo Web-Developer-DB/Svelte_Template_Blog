@@ -40,7 +40,7 @@ Stell dir den Content-Indexer wie eine Mini-Datenbank im Dateisystem vor. Jeder 
 
 ## Direkt loslegen
 
-1. `npm install` installieren alle Abhängigkeiten, inklusive **Tailwind**, **Fuse.js** und **Playwright**.
+1. `npm install` installieren alle Abhängigkeiten, inklusive **Tailwind** und **Fuse.js**.
 2. `npm run dev` startet den lokalen Server. Du erreichst das Dashboard unter `http://localhost:5173`.
 3. Öffne `/docs/01-uebersicht`, um den Lernpfad zu lesen.
 

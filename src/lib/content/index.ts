@@ -74,12 +74,14 @@ const contentModules = import.meta.glob<ContentModule>('/content/blog/**/*.{md,s
 
 const rawMarkdownMap = import.meta.glob<string>('/content/blog/**/*.{md,svx}', {
   eager: true,
-  as: 'raw'
+  query: '?raw',
+  import: 'default'
 });
 
 const rawSvelteMap = import.meta.glob<string>('/content/blog/**/*.svelte', {
   eager: true,
-  as: 'raw'
+  query: '?raw',
+  import: 'default'
 });
 
 let cache: ContentIndex | null = null;
@@ -109,7 +111,8 @@ function getRawContent(path: string): string {
  */
 function createPost(path: string, mod: ContentModule): BlogPost {
   const slug = toSlug(path);
-  const metadata = mod.metadata;
+  const componentWithMetadata = mod.default as ComponentType & { metadata?: Frontmatter };
+  const metadata = mod.metadata ?? componentWithMetadata.metadata;
 
   if (!metadata) {
     throw new Error(`Beitrag ${slug} verfügt über kein Frontmatter. Bitte ergänzen.`);

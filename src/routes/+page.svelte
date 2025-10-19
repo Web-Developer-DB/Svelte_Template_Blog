@@ -23,7 +23,7 @@
     </p>
     <div class="mt-6 flex flex-wrap gap-3">
       <a
-        class="focus-ring inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-accent/80"
+        class="focus-ring inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-semibold text-surface shadow-lg transition hover:bg-accent/80"
         href="/blog"
       >
         Zu allen Artikeln
@@ -54,7 +54,7 @@
     <ol class="mt-4 space-y-3 text-sm text-emphasis/90">
       <li><strong>1. Struktur verstehen:</strong> Starte mit den Docs unter <code>/docs</code>, um Builds, Layout und Content-Indexierung kennenzulernen.</li>
       <li><strong>2. UI erweitern:</strong> Passe Komponenten in <code>src/lib/components</code> an, experimentiere mit Container-Queries und Theme-Varianten.</li>
-      <li><strong>3. Automationen ausbauen:</strong> Schreibe eigene Tests in <code>/tests</code> und erweitere die Hashtag-Heuristik für deinen Use-Case.</li>
+      <li><strong>3. Automationen ausbauen:</strong> Ergänze eigene Checks (z. B. axe/pa11y) und feile an der Hashtag-Heuristik für deinen Use-Case.</li>
     </ol>
   </section>
 </section>

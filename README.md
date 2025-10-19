@@ -6,7 +6,7 @@
 
 # SvelteKit Lernblog – Lehrreiches Starter-Template
 
-Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet sich an Junior-Entwickler:innen, die moderne Frontend-Patterns lernen möchten – von Content-Autodiscovery über Theme-Handling bis hin zu Tests und Deployment.
+Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet sich an Junior-Entwickler:innen, die moderne Frontend-Patterns lernen möchten – von Content-Autodiscovery über Theme-Handling bis hin zu Deployment.
 
 ## Highlights auf einen Blick
 
@@ -16,7 +16,6 @@ Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet
 - **Fuse.js-Suche & Filter:** Clientseitige Volltextsuche über Titel, Text, Hashtags, Topics.
 - **Automatisches Theming:** System-, Hell- und Dunkelmodus inkl. `prefers-contrast`.
 - **SEO & Feeds:** Meta-Tags, JSON-LD, Sitemap und RSS out of the box.
-- **Tests & CI:** Vitest, Playwright, axe/pa11y und GitHub Actions.
 - **Lehrmodus:** Jede Datei ist ausführlich kommentiert, Docs erklären die Architektur.
 
 ## Architektur-Überblick
@@ -31,7 +30,6 @@ Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet
 │  └─ styles/            → Tailwind + Theme-Variablen
 ├─ content/blog/         → ~10 Beispielposts (md/svx/svelte)
 ├─ static/images/        → SVG-Cover & Social Card
-├─ tests/                → Vitest (unit) & Playwright (e2e)
 ├─ docs/                 → Lernpfad & vertiefende Erklärungen
 └─ .github/workflows/    → CI-Pipeline
 ```
@@ -46,12 +44,7 @@ npm run dev         # Entwicklungsserver (http://localhost:5173)
 npm run build       # Produktionsbuild erzeugen
 npm run preview     # Build lokal testen
 
-# Qualität & Tests
 npm run check       # Svelte- und TypeScript-Checks
-npm run test:unit   # Vitest (Hashtag-Heuristik)
-npm run test:e2e    # Playwright inkl. axe
-npm run test:a11y   # pa11y-CI (benötigt laufenden Preview-Server)
-npm run test        # Führt Unit + E2E + pa11y in Serie aus
 ```
 
 ## Lernpfad („Starte hier“)
@@ -60,7 +53,7 @@ npm run test        # Führt Unit + E2E + pa11y in Serie aus
 2. Öffne `src/lib/content/index.ts`, um den Content-Flow nachzuvollziehen.
 3. Inspiziere `ThemeToggle.svelte` und `globals.css`, um das Theming zu verstehen.
 4. Teste Suche & Filter in `/search` und `/blog`.
-5. Führe `npm run test` aus und sieh dir die Terminalausgabe an.
+5. Führe `npm run build` aus, um den Produktionspfad zu prüfen.
 
 ## Content-Guide
 
@@ -87,14 +80,6 @@ Nach dem Speichern aktualisiert SvelteKit die Seite automatisch (HMR). Keine zus
 - `/blog` bietet kombinierbare Filter für Hashtags und Topics über `TagChips`.
 - Hashtags werden aus Text + Whitelist generiert; Stopwortliste findest du unter `src/lib/content/stopwords.de.txt`.
 
-## Qualitätssicherung
-
-- **Vitest:** Testet die Hashtag-Heuristik (`tests/unit/hashtag.test.ts`).
-- **Playwright:** Prüft Suche, Filter und Theme-Toggle (`tests/e2e/search.spec.ts`).
-- **axe-playwright:** Löst WCAG-Checks im E2E-Lauf aus.
-- **pa11y-ci:** Zusätzlicher Accessibility-Check gegen das gebaute Projekt (`.pa11yci`).
-- **GitHub Actions:** Workflow `.github/workflows/ci.yml` führt alle Schritte automatisch aus.
-
 ## Deployment (Vercel)
 
 1. Repository mit Vercel verknüpfen (`vercel link`).
@@ -113,8 +98,6 @@ Nach dem Speichern aktualisiert SvelteKit die Seite automatisch (HMR). Keine zus
 ## Troubleshooting
 
 - **Fehlendes Frontmatter:** Konsole zeigt "`Beitrag <slug> verfügt über kein Frontmatter`" → Frontmatter ergänzen.
-- **pa11y schlägt fehl:** Stelle sicher, dass der Preview-Server läuft (`npm run preview`) und `wait-on` die URL erreicht.
-- **Playwright hängt:** Führe `npx playwright install --with-deps` aus, um Browser zu installieren.
 
 ## Lizenz
 

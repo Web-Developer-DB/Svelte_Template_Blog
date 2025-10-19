@@ -18,16 +18,15 @@
 5. **Hashtags** (aus Frontmatter + Auto-Extraktion) & **Themen-Tags** (textuelle Topics).
 6. **Clientseitige Suche** (z. B. Fuse.js) über Titel, Auszug/Body, Hashtags, Themen.
 7. **SEO** (Meta/OG/Twitter), **Sitemap**, **RSS**, JSON-LD.
-8. **Tests & CI** (Vitest, Playwright, axe/pa11y).
-9. **README.md** mit Schritt-für-Schritt-Anleitung + Lernpfad.
-10. **≈10 Beispiel-Posts** mit realistischen Inhalten, verschiedenen Tags/Themen.
-11. **Lehrmodus:** ***kompletter Code ausführlich kommentiert*** (siehe „Dokustandard“).
+8. **README.md** mit Schritt-für-Schritt-Anleitung + Lernpfad.
+9. **≈10 Beispiel-Posts** mit realistischen Inhalten, verschiedenen Tags/Themen.
+10. **Lehrmodus:** ***kompletter Code ausführlich kommentiert*** (siehe „Dokustandard“).
 
 ---
 
 ## 🧩 Tech-Stack
 
-SvelteKit, Svelte, TypeScript (strict), Tailwind 3, MDsveX, Fuse.js, Vitest, Playwright, axe/pa11y, `@sveltejs/adapter-vercel`.
+SvelteKit, Svelte, TypeScript (strict), Tailwind 3, MDsveX, Fuse.js, `@sveltejs/adapter-vercel`.
 
 ---
 
@@ -59,9 +58,6 @@ SvelteKit, Svelte, TypeScript (strict), Tailwind 3, MDsveX, Fuse.js, Vitest, Pla
 /content
   /blog/...           # ca. 10 Beispielposts (.md/.svx, 1–2 .svelte)
 /static/images/...
-/tests
-  unit/hashtag.test.ts
-  e2e/search.spec.ts
 /docs
   01-uebersicht.md
   02-architektur.md
@@ -117,15 +113,6 @@ SvelteKit, Svelte, TypeScript (strict), Tailwind 3, MDsveX, Fuse.js, Vitest, Pla
 
 * Default-Meta in `+layout.ts`; pro Seite überschreibbar.
 * **/sitemap.xml**, **/rss.xml**, **JSON-LD** (`Article/BlogPosting`).
-
-### 7) Tests & CI
-
-* **Vitest**: Unit-Tests für `hashtag.ts`.
-* **Playwright**: E2E (Theme-Toggle, Suche, Filter, responsives Layout).
-* **axe/pa11y**: WCAG-AA-Checks.
-* **GitHub Actions**: Lint → Build → Tests → A11y.
-
----
 
 ## 🧪 Beispiel-Content (~10 Posts)
 
@@ -197,7 +184,7 @@ export function extractHashtags(text: string, opts = { max: 5 }): string[] { ...
 * Hashtags & Themen-Tags sichtbar und filterbar.
 * Suche liefert passende Treffer (Titel, Auszug/Body, Tags, Topics).
 * SEO/Sitemap/RSS vorhanden.
-* Tests & A11y im CI grün.
+* Build läuft ohne Fehler.
 * **Kommentardeckung**: Jede Datei mit Kopfkommentar; jede Funktion/Komponente mit TSDoc; erklärende Inline-Kommentare an Kernstellen; `/docs`-Tutorials vorhanden.
 
 ---
@@ -208,12 +195,12 @@ Muss enthalten:
 
 1. **Projektüberblick** + Zielgruppe (Junior-Dev-freundlich).
 2. **Features & Architektur-Überblick** (Diagramm/ASCII ok).
-3. **Setup** inkl. Node-Version, Befehle (`dev`, `build`, `preview`, Tests).
+3. **Setup** inkl. Node-Version, Befehle (`dev`, `build`, `preview`, `check`).
 4. **Ordnerstruktur** und **wichtige Dateien** erklärt.
 5. **Content-Guide** (neue Posts, Frontmatter, Topics vs. Tags).
 6. **Theming & Responsiveness** (wie es funktioniert, wie ändern).
 7. **Suche & Filter** (Fuse.js-Konfiguration, Erweiterungen).
-8. **Qualitätssicherung** (ESLint/Prettier-Hinweise optional), **Tests**, **A11y**.
+8. **Qualitätssicherung** (ESLint/Prettier-Hinweise optional) und Hinweise zur Accessibility.
 9. **Deployment** (Vercel).
 10. **FAQ & Troubleshooting**.
 11. **Lizenz & Autor**.
@@ -228,7 +215,6 @@ Muss enthalten:
 > – **Content-Autodiscovery**, **Hashtags + Themen-Tags**,
 > – **Suche** (Fuse.js) über Titel/Body/Tags/Topics,
 > – **SEO/Sitemap/RSS/JSON-LD**,
-> – **Tests & CI** (Vitest, Playwright, axe/pa11y),
 > – **~10 Beispiel-Posts**.
 > Stelle sicher, dass das Projekt **nach der Generierung sofort lauffähig** ist (`npm install && npm run dev`) und eine **umfangreiche README.md** + **/docs**-Tutorials erzeugt werden.
 

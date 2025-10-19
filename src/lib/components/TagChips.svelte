@@ -43,10 +43,7 @@
   {#each items as item (item)}
     <button
       type="button"
-      class="focus-ring rounded-full border border-muted/40 px-3 py-1 text-xs font-semibold transition hover:border-accent"
-      class:border-accent={isActive(item)}
-      class:bg-accent/10={isActive(item)}
-      class:text-accent={isActive(item)}
+      class={`focus-ring rounded-full border border-muted/40 px-3 py-1 text-xs font-semibold transition hover:border-accent ${isActive(item) ? 'border-accent bg-accent/10 text-accent' : ''}`}
       on:click={() => handleToggle(item)}
     >
       #{item}

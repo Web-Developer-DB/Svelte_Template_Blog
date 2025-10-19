@@ -44,7 +44,7 @@ Ein häufiger Fehler ist, jede kleinste Interaktion in ein Svelte-Component zu p
 
 ## Messung
 
-Starte Lighthouse im Chrome DevTools oder nutze `npm run test:e2e`, das Playwright mit `axe` kombiniert. Achte auf:
+Starte Lighthouse im Chrome DevTools oder kombiniere bei Bedarf Playwright mit `axe-playwright`, wenn du automatisierte Checks ergänzen möchtest. Achte auf:
 
 - **Largest Contentful Paint**: Die Hero-Sektion wird statisch ausgeliefert, also schnell.
 - **Cumulative Layout Shift**: Dank definierter Bildgrößen bleibt der Wert niedrig.
