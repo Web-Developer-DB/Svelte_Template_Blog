@@ -1,0 +1,176 @@
+/**
+ * @file src/styles/globals.css
+ * @description Globale CSS-Basis für das Projekt. Enthält CSS-Variablen für das
+ * Theming, Resets, Fluid Typography sowie Hilfs-Klassen, die Tailwind ergänzen.
+ * Die Variablen werden von Tailwind via `rgb(var(--color-*) / <alpha>)` genutzt.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Abschnitt: CSS-Variablen für Theme und Motion-Preferences */
+:root {
+  /* Helles Thema: hohe Kontraste zwischen Text- und Hintergrundfarben sichern */
+  --color-surface: 247 248 253; /* #F7F8FD */
+  --color-muted: 107 114 128; /* #6B7280 */
+  --color-accent: 37 81 187; /* #2551BB */
+  --color-emphasis: 15 23 42; /* #0F172A */
+  color-scheme: light;
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+[data-theme='dark'] {
+  /* Dunkles Thema: hellere Grundfläche + hohe Kontraste für Text und Icons */
+  --color-surface: 20 28 48; /* #141C30 */
+  --color-muted: 192 202 218; /* #C0CADE */
+  --color-accent: 148 161 255; /* #94A1FF */
+  --color-emphasis: 249 251 255; /* #F9FBFF */
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Abschnitt: Fluid Typography */
+html {
+  font-size: clamp(15px, 0.95vw + 0.5rem, 18px);
+  background-color: rgb(var(--color-surface));
+}
+
+body {
+  font-family: 'InterVariable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-emphasis));
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+[data-theme='dark'] body {
+  color: rgb(var(--color-emphasis));
+}
+
+/* Hilfsklasse für Fokus-Markierungen (Accessible Outline) */
+.focus-ring:focus-visible {
+  outline: 3px solid rgb(var(--color-accent));
+  outline-offset: 2px;
+}
+
+/* Ankerlinks an Überschriften sichtbar machen */
+.heading-anchor {
+  opacity: 0;
+  margin-left: 0.35rem;
+  color: rgb(var(--color-accent) / 0.85);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.prose {
+  color: rgb(var(--color-emphasis) / 0.93);
+}
+
+[data-theme='dark'] .prose {
+  color: rgb(var(--color-emphasis) / 0.95);
+}
+
+[data-theme='dark'] .prose a {
+  color: rgb(var(--color-accent));
+}
+
+[data-theme='dark'] .prose a:hover {
+  color: rgb(var(--color-accent) / 0.85);
+}
+
+[data-theme='dark'] .prose h1,
+[data-theme='dark'] .prose h2,
+[data-theme='dark'] .prose h3,
+[data-theme='dark'] .prose h4,
+[data-theme='dark'] .prose h5,
+[data-theme='dark'] .prose h6 {
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] .prose strong {
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] code,
+[data-theme='dark'] pre code {
+  background-color: rgb(var(--color-muted) / 0.5);
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] pre {
+  background-color: rgb(var(--color-surface) / 0.95);
+  border: 1px solid rgb(var(--color-muted) / 0.4);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.3);
+}
+
+[data-theme='dark'] blockquote {
+  border-left-color: rgb(var(--color-accent) / 0.7);
+  background-color: rgb(var(--color-surface) / 0.9);
+  color: rgb(var(--color-emphasis) / 0.95);
+}
+
+[data-theme='dark'] hr {
+  border-color: rgb(var(--color-muted) / 0.35);
+}
+
+.theme-toggle-icon {
+  transition: transform 0.45s ease;
+}
+
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-in-up {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fade-in-up 0.6s ease forwards;
+  }
+
+  .anim-fade-in-up:nth-child(odd) {
+    animation-delay: 0.08s;
+  }
+
+  .anim-fade-in-up:nth-child(even) {
+    animation-delay: 0.16s;
+  }
+
+  .anim-soft-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .anim-soft-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  [data-theme-state='system'] .theme-toggle-icon {
+    transform: rotate(0deg) scale(1);
+  }
+
+  [data-theme-state='light'] .theme-toggle-icon {
+    transform: rotate(-20deg) scale(1.05);
+  }
+
+  [data-theme-state='dark'] .theme-toggle-icon {
+    transform: rotate(200deg) scale(1.05);
+  }
+
+  @keyframes fade-in-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

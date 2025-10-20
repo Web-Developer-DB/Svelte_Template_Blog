@@ -1,0 +1,61 @@
+---
+layout: blog
+title: "Auto-Hashtags: Eine kleine NLP-Übung"
+date: "2025-03-05"
+tags:
+  - hashtags
+  - nlp
+  - heuristik
+topics:
+  - NLP
+  - Metadaten
+excerpt: "Schritt-für-Schritt-Erklärung der Heuristik in `extractHashtags`, inklusive Tipps für Erweiterungen."
+cover: "/images/cover-hashtags.svg"
+---
+
+<script>
+  import { extractHashtags } from '$content/hashtag';
+
+  const sampleText = `SvelteKit kombiniert File-based Routing, Server Rendering und progressive Enhancement. 
+  Die reaktive Syntax vereinfacht UI-Entwicklung, während Vite als Build-Tool für schnelle HMR sorgt.`;
+
+  const hashtags = extractHashtags(sampleText, { max: 5 });
+</script>
+
+Automatisierte Hashtags wirken wie Magie, sind aber in Wahrheit eine Abfolge einfacher Schritte. In `hashtag.ts` zeige ich dir eine **Heuristik**, die du an deine Bedürfnisse anpassen kannst. Lass uns die Bestandteile durchgehen.
+
+## Stopwort-Filter
+
+Die Datei `stopwords.de.txt` enthält rund 120 deutsche Stoppwörter. Beim Extrahieren spalten wir den Text in Tokens (`split(/\s+/)`) und filtern Wörter, die entweder zu kurz sind (`MIN_TOKEN_LENGTH`) oder in der Stopwortliste auftauchen. Eine optionale `whitelist` erlaubt Ausnahmen – praktisch für Produktnamen.
+
+## Normalisierung
+
+`normalizeHashtag` entfernt Sonderzeichen und wandelt alles in Kleinbuchstaben um. Dadurch führt „Dark-Mode“, „darkmode“ und „#DarkMode“ zum selben Token. Ohne diese Normalisierung würdest du doppelte Hashtags riskieren.
+
+## Frequenzanalyse
+
+Die Token werden in einer `Map` gezählt. Danach sortieren wir absteigend nach Häufigkeit, mit alphabetischem Tie-Break:
+
+```ts
+const sorted = Array.from(counts.entries())
+  .filter(([token, occurrences]) => occurrences >= minOccurrences || whitelist.includes(token))
+  .sort((a, b) => (b[1] === a[1] ? a[0].localeCompare(b[0], 'de') : b[1] - a[1]));
+```
+
+`minOccurrences` verhindert, dass einmalig erwähnte Wörter im Ranking auftauchen. Für kurze Artikel kannst du den Wert reduzieren.
+
+## Demo
+
+<div class="rounded-lg border border-muted/30 bg-surface/70 p-4 text-sm">
+  <p class="font-semibold text-emphasis">Beispiel: Analyse eines Texts</p>
+  <pre class="mt-2 text-xs text-muted/80">{sampleText}</pre>
+  <p class="mt-2 text-accent">Erkannte Hashtags: {hashtags.join(', ')}</p>
+</div>
+
+## Grenzen & Ausblick
+
+- **Sprachen**: Die Stopwortliste ist deutsch. Für englische Artikel brauchst du eine zweite Datei.
+- **Morphologie**: Worte wie „komponieren“ und „Komponenten“ sind verwandt, werden aber separat gezählt. Für bessere Ergebnisse könntest du einen Stemmer integrieren.
+- **Semantik**: Die Heuristik versteht keine Synonyme. Wenn du echte Themenklassifikation willst, probiere TF-IDF oder embeddings.
+
+Trotz dieser Grenzen reicht die Heuristik für viele Content-Projekte. Wichtig ist, dass du deine Annahmen dokumentierst. Schreibe in der README, warum du dich für dieses Verfahren entschieden hast – so können zukünftige Teammitglieder auf deiner Arbeit aufbauen.
