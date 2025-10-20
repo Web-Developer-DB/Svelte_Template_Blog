@@ -1,0 +1,289 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/blog",
+			"dest": "/blog/"
+		},
+		{
+			"src": "/blog/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog"
+			}
+		},
+		{
+			"src": "/docs",
+			"dest": "/docs/"
+		},
+		{
+			"src": "/docs/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs"
+			}
+		},
+		{
+			"src": "/search",
+			"dest": "/search/"
+		},
+		{
+			"src": "/search/",
+			"status": 308,
+			"headers": {
+				"Location": "/search"
+			}
+		},
+		{
+			"src": "/tags",
+			"dest": "/tags/"
+		},
+		{
+			"src": "/tags/",
+			"status": 308,
+			"headers": {
+				"Location": "/tags"
+			}
+		},
+		{
+			"src": "/docs/01-uebersicht",
+			"dest": "/docs/01-uebersicht/"
+		},
+		{
+			"src": "/docs/01-uebersicht/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs/01-uebersicht"
+			}
+		},
+		{
+			"src": "/blog/2025-05-deployment-vercel",
+			"dest": "/blog/2025-05-deployment-vercel/"
+		},
+		{
+			"src": "/blog/2025-05-deployment-vercel/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-05-deployment-vercel"
+			}
+		},
+		{
+			"src": "/blog/2025-05-barrierefreiheit-check",
+			"dest": "/blog/2025-05-barrierefreiheit-check/"
+		},
+		{
+			"src": "/blog/2025-05-barrierefreiheit-check/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-05-barrierefreiheit-check"
+			}
+		},
+		{
+			"src": "/blog/2025-04-ux-im-web",
+			"dest": "/blog/2025-04-ux-im-web/"
+		},
+		{
+			"src": "/blog/2025-04-ux-im-web/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-04-ux-im-web"
+			}
+		},
+		{
+			"src": "/blog/2025-04-seo-tipps",
+			"dest": "/blog/2025-04-seo-tipps/"
+		},
+		{
+			"src": "/blog/2025-04-seo-tipps/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-04-seo-tipps"
+			}
+		},
+		{
+			"src": "/blog/2025-03-performance-tuning",
+			"dest": "/blog/2025-03-performance-tuning/"
+		},
+		{
+			"src": "/blog/2025-03-performance-tuning/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-03-performance-tuning"
+			}
+		},
+		{
+			"src": "/blog/2025-03-auto-hashtags",
+			"dest": "/blog/2025-03-auto-hashtags/"
+		},
+		{
+			"src": "/blog/2025-03-auto-hashtags/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-03-auto-hashtags"
+			}
+		},
+		{
+			"src": "/blog/2025-02-content-architektur",
+			"dest": "/blog/2025-02-content-architektur/"
+		},
+		{
+			"src": "/blog/2025-02-content-architektur/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-02-content-architektur"
+			}
+		},
+		{
+			"src": "/blog/2025-02-darkmode-theming",
+			"dest": "/blog/2025-02-darkmode-theming/"
+		},
+		{
+			"src": "/blog/2025-02-darkmode-theming/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-02-darkmode-theming"
+			}
+		},
+		{
+			"src": "/blog/2025-01-responsive-design",
+			"dest": "/blog/2025-01-responsive-design/"
+		},
+		{
+			"src": "/blog/2025-01-responsive-design/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-01-responsive-design"
+			}
+		},
+		{
+			"src": "/blog/2025-01-hello-svelte",
+			"dest": "/blog/2025-01-hello-svelte/"
+		},
+		{
+			"src": "/blog/2025-01-hello-svelte/",
+			"status": 308,
+			"headers": {
+				"Location": "/blog/2025-01-hello-svelte"
+			}
+		},
+		{
+			"src": "/docs/02-architektur",
+			"dest": "/docs/02-architektur/"
+		},
+		{
+			"src": "/docs/02-architektur/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs/02-architektur"
+			}
+		},
+		{
+			"src": "/docs/03-content-workflow",
+			"dest": "/docs/03-content-workflow/"
+		},
+		{
+			"src": "/docs/03-content-workflow/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs/03-content-workflow"
+			}
+		},
+		{
+			"src": "/docs/04-styling-und-theming",
+			"dest": "/docs/04-styling-und-theming/"
+		},
+		{
+			"src": "/docs/04-styling-und-theming/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs/04-styling-und-theming"
+			}
+		},
+		{
+			"src": "/docs/05-suche-und-filter",
+			"dest": "/docs/05-suche-und-filter/"
+		},
+		{
+			"src": "/docs/05-suche-und-filter/",
+			"status": 308,
+			"headers": {
+				"Location": "/docs/05-suche-und-filter"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/![-]/catchall"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"blog.html": {
+			"path": "blog"
+		},
+		"docs.html": {
+			"path": "docs"
+		},
+		"search.html": {
+			"path": "search"
+		},
+		"tags.html": {
+			"path": "tags"
+		},
+		"docs/01-uebersicht.html": {
+			"path": "docs/01-uebersicht"
+		},
+		"blog/2025-05-deployment-vercel.html": {
+			"path": "blog/2025-05-deployment-vercel"
+		},
+		"blog/2025-05-barrierefreiheit-check.html": {
+			"path": "blog/2025-05-barrierefreiheit-check"
+		},
+		"blog/2025-04-ux-im-web.html": {
+			"path": "blog/2025-04-ux-im-web"
+		},
+		"blog/2025-04-seo-tipps.html": {
+			"path": "blog/2025-04-seo-tipps"
+		},
+		"blog/2025-03-performance-tuning.html": {
+			"path": "blog/2025-03-performance-tuning"
+		},
+		"blog/2025-03-auto-hashtags.html": {
+			"path": "blog/2025-03-auto-hashtags"
+		},
+		"blog/2025-02-content-architektur.html": {
+			"path": "blog/2025-02-content-architektur"
+		},
+		"blog/2025-02-darkmode-theming.html": {
+			"path": "blog/2025-02-darkmode-theming"
+		},
+		"blog/2025-01-responsive-design.html": {
+			"path": "blog/2025-01-responsive-design"
+		},
+		"blog/2025-01-hello-svelte.html": {
+			"path": "blog/2025-01-hello-svelte"
+		},
+		"docs/02-architektur.html": {
+			"path": "docs/02-architektur"
+		},
+		"docs/03-content-workflow.html": {
+			"path": "docs/03-content-workflow"
+		},
+		"docs/04-styling-und-theming.html": {
+			"path": "docs/04-styling-und-theming"
+		},
+		"docs/05-suche-und-filter.html": {
+			"path": "docs/05-suche-und-filter"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#gradient)" />
+  <text x="50%" y="45%" font-size="64" fill="#ffffff" font-family="Inter, sans-serif" text-anchor="middle">
+    Hallo SvelteKit
+  </text>
+  <text x="50%" y="65%" font-size="28" fill="#e0e7ff" font-family="Inter, sans-serif" text-anchor="middle">
+    Lernblog • Start hier
+  </text>
+</svg>

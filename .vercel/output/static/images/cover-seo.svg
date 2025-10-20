@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="seoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#seoGradient)" />
+  <text x="50%" y="48%" font-size="62" fill="#ede9fe" font-family="Inter, sans-serif" text-anchor="middle">
+    SEO
+  </text>
+  <text x="50%" y="70%" font-size="28" fill="#ddd6fe" font-family="Inter, sans-serif" text-anchor="middle">
+    Meta • Sitemap • JSON-LD
+  </text>
+</svg>

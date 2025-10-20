@@ -41,7 +41,7 @@ MDsveX     •  Fuse.js            •  @sveltejs/adapter-vercel
 
 ## Nächste Schritte
 
-- Lies [`02-architektur.md`](02-architektur.md) für tiefergehende Strukturinfos.
+- Lies [`02-architektur`](./02-architektur) für tiefergehende Strukturinfos.
 - Öffne das Projekt im Editor und folge den Kommentaren – sie sind bewusst ausführlich.
 
 Viel Spaß beim Lernen!

@@ -41,4 +41,4 @@ Wichtige Highlights aus `tailwind.config.cjs`:
 - Erweitere `ThemeToggle`, sodass ein Dropdown alle Varianten anzeigt.
 - Implementiere `prefers-contrast: more` Styling (z. B. dickere Grenzen, größere Schrift).
 
-Als Nächstes: [`05-suche-und-filter.md`](05-suche-und-filter.md) erklärt Fuse.js und die Filtermechanik.
+Als Nächstes: [`05-suche-und-filter`](./05-suche-und-filter) erklärt Fuse.js und die Filtermechanik.

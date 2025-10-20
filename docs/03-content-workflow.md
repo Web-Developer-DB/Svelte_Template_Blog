@@ -53,4 +53,4 @@ Das Ergebnis landet in `post.autoHashtags`. In der UI werden manuelle Tags und A
 - **Falscher Cover-Pfad:** Assets müssen unter `/static` liegen.
 - **Datum im falschen Format:** Verwende ISO-Strings (`YYYY-MM-DD`), damit Sortierung korrekt funktioniert.
 
-Weiter geht es mit Styling-Themen: [`04-styling-und-theming.md`](04-styling-und-theming.md).
+Weiter geht es mit Styling-Themen: [`04-styling-und-theming`](./04-styling-und-theming).

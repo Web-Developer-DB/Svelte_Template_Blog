@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>SvelteKit Lernblog</title>
+      <link>https://example.com</link>
+      <description>Kommentiertes SvelteKit-Template für Junior-Entwickler:innen mit Fokus auf Content-Automatismen, Suche und Theming.</description>
+      <language>de-DE</language>
+      
+      <item>
+        <title>Deployment auf Vercel: Von `npm run build` zur Live-Site</title>
+        <link>https://example.com/blog/2025-05-deployment-vercel</link>
+        <guid>https://example.com/blog/2025-05-deployment-vercel</guid>
+        <pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Schritt-für-Schritt-Anleitung, wie du dieses Template auf Vercel ausrollst – inklusive CI-Setup und Tipps für Preview-Umgebungen.]]></description>
+      </item>
+      <item>
+        <title>Barrierefreiheit testen: axe und pa11y im Einsatz</title>
+        <link>https://example.com/blog/2025-05-barrierefreiheit-check</link>
+        <guid>https://example.com/blog/2025-05-barrierefreiheit-check</guid>
+        <pubDate>Wed, 07 May 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Wie du Accessibility-Checks automatisierst und welche manuellen Tests du zusätzlich durchführen solltest.]]></description>
+      </item>
+      <item>
+        <title>UX im Web: Kleine Details, große Wirkung</title>
+        <link>https://example.com/blog/2025-04-ux-im-web</link>
+        <guid>https://example.com/blog/2025-04-ux-im-web</guid>
+        <pubDate>Sat, 19 Apr 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Warum Micro-Interactions, Fokus-States und klare Microcopy die Benutzererfahrung deines Blogs verbessern.]]></description>
+      </item>
+      <item>
+        <title>SEO-Basics für SvelteKit Blogs</title>
+        <link>https://example.com/blog/2025-04-seo-tipps</link>
+        <guid>https://example.com/blog/2025-04-seo-tipps</guid>
+        <pubDate>Fri, 04 Apr 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Meta-Tags, OpenGraph, JSON-LD und technische Basics: Alles, was du brauchst, damit Suchmaschinen dein SvelteKit-Blog lieben.]]></description>
+      </item>
+      <item>
+        <title>Performance-Tuning: Lighthouse-ready mit SvelteKit</title>
+        <link>https://example.com/blog/2025-03-performance-tuning</link>
+        <guid>https://example.com/blog/2025-03-performance-tuning</guid>
+        <pubDate>Tue, 18 Mar 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Konkrete Maßnahmen, wie du dieses Template für schnelle Ladezeiten optimierst – inklusive Tipps zu Prerendering, Caching und Critical CSS.]]></description>
+      </item>
+      <item>
+        <title>Auto-Hashtags: Eine kleine NLP-Übung</title>
+        <link>https://example.com/blog/2025-03-auto-hashtags</link>
+        <guid>https://example.com/blog/2025-03-auto-hashtags</guid>
+        <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Schritt-für-Schritt-Erklärung der Heuristik in `extractHashtags`, inklusive Tipps für Erweiterungen.]]></description>
+      </item>
+      <item>
+        <title>Content-Architektur mit import.meta.glob</title>
+        <link>https://example.com/blog/2025-02-content-architektur</link>
+        <guid>https://example.com/blog/2025-02-content-architektur</guid>
+        <pubDate>Tue, 18 Feb 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Wie der Content-Indexer funktioniert, welche Datenstruktur wir zurückgeben und warum wir mehrere Glob-Maps nutzen.]]></description>
+      </item>
+      <item>
+        <title>Automatisches Theming mit System-Respekt</title>
+        <link>https://example.com/blog/2025-02-darkmode-theming</link>
+        <guid>https://example.com/blog/2025-02-darkmode-theming</guid>
+        <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Wie das Theme-Toggle funktioniert, welche Rolle CSS-Variablen spielen und wie du `prefers-color-scheme`, `prefers-contrast` und `prefers-reduced-motion` kombinierst.]]></description>
+      </item>
+      <item>
+        <title>Responsives Design mit Tailwind und Container-Queries</title>
+        <link>https://example.com/blog/2025-01-responsive-design</link>
+        <guid>https://example.com/blog/2025-01-responsive-design</guid>
+        <pubDate>Wed, 22 Jan 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Ein praxisnaher Leitfaden, wie du fluides Typography, Container-Queries und moderne Tailwind-Utilities kombinierst.]]></description>
+      </item>
+      <item>
+        <title>Hallo SvelteKit: Warum dieses Template existiert</title>
+        <link>https://example.com/blog/2025-01-hello-svelte</link>
+        <guid>https://example.com/blog/2025-01-hello-svelte</guid>
+        <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+        <description><![CDATA[Ein persönlicher Einstieg in dieses Lernprojekt: Warum SvelteKit, welche Architektur dahintersteckt und wie du sofort loslegst.]]></description>
+      </item>
+    </channel>
+  </rss>
