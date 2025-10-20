@@ -37,6 +37,15 @@
         <Icon name="home" size={18} />
         Lernpfad öffnen
       </a>
+      <a
+        class="focus-ring inline-flex items-center gap-2 rounded-full border border-accent/70 px-5 py-2 text-sm font-semibold text-accent transition hover:bg-accent/10"
+        href="https://github.com/Web-Developer-DB/Svelte_Template_Blog"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="code" size={18} />
+        Zum Code
+      </a>
     </div>
   </header>
 

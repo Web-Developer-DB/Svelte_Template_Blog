@@ -5,7 +5,7 @@
   damit sie offline funktionieren. Farben werden über `currentColor` gesteuert.
 -->
 <script lang="ts">
-  export type IconName = 'home' | 'articles' | 'tags' | 'search' | 'sun-moon';
+  export type IconName = 'home' | 'articles' | 'tags' | 'search' | 'sun-moon' | 'code';
 
   export let name: IconName = 'home';
   export let size = 22;
@@ -58,6 +58,13 @@
         { d: 'm17.34 17.34 1.06 1.06', filled: false },
         { d: 'm5.6 18.4 1.06-1.06', filled: false },
         { d: 'm17.34 6.66 1.06-1.06', filled: false }
+      ]
+    },
+    code: {
+      paths: [
+        { d: 'M8 8 4 12l4 4', filled: false },
+        { d: 'M16 8l4 4-4 4', filled: false },
+        { d: 'M10 6l4 12', filled: false }
       ]
     }
   };
