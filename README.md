@@ -13,6 +13,8 @@ Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet
 - **SvelteKit + TypeScript (strict):** Moderne DX mit klaren Typen.
 - **Tailwind 3 + Container-Queries:** Responsives, komponentenorientiertes Design.
 - **MDsveX & Content-Autodiscovery:** Markdown, MDX und Svelte-Posts ohne manuelle Imports.
+- **Docs als Routen:** `/docs` rendert die Lernpfad-Markdowns direkt im Browser.
+- **Inline-Icons & Micro-Animationen:** Leichtgewichtige SVG-Icons plus Motion-Helfer für Navigation & Cards.
 - **Fuse.js-Suche & Filter:** Clientseitige Volltextsuche über Titel, Text, Hashtags, Topics.
 - **Automatisches Theming:** System-, Hell- und Dunkelmodus inkl. `prefers-contrast`.
 - **SEO & Feeds:** Meta-Tags, JSON-LD, Sitemap und RSS out of the box.
@@ -49,9 +51,9 @@ npm run check       # Svelte- und TypeScript-Checks
 
 ## Lernpfad („Starte hier“)
 
-1. Lies `docs/01-uebersicht.md` bis `docs/05-suche-und-filter.md`.
+1. Lies `docs/01-uebersicht.md` bis `docs/05-suche-und-filter.md` (sie werden unter `/docs/<slug>` dargestellt).
 2. Öffne `src/lib/content/index.ts`, um den Content-Flow nachzuvollziehen.
-3. Inspiziere `ThemeToggle.svelte` und `globals.css`, um das Theming zu verstehen.
+3. Betrachte `ThemeToggle.svelte`, `globals.css` und `src/lib/components/icons/Icon.svelte` für Theme, Farben, Motion und Icons.
 4. Teste Suche & Filter in `/search` und `/blog`.
 5. Führe `npm run build` aus, um den Produktionspfad zu prüfen.
 
@@ -70,15 +72,17 @@ Nach dem Speichern aktualisiert SvelteKit die Seite automatisch (HMR). Keine zus
 ## Theming & Responsivität
 
 - CSS-Variablen definieren Light/Dark-Farben (`--color-surface`, `--color-accent` etc.).
-- `ThemeToggle.svelte` respektiert `prefers-color-scheme`, `prefers-contrast` und speichert die Wahl.
+- `ThemeToggle.svelte` respektiert `prefers-color-scheme`, `prefers-contrast`, nutzt ein animiertes Icon und speichert die Wahl.
 - Container-Queries (`@tailwindcss/container-queries`) ermöglichen komponentenbasierte Layout-Wechsel.
 - Fluid Typography (via `clamp`) sorgt für dynamische Schriftgrößen.
+- Utility-Klassen wie `anim-fade-in-up` und `anim-soft-hover` liefern subtile Bewegungen und halten bei `prefers-reduced-motion` inne.
 
 ## Suche & Filter
 
 - `/search` nutzt Fuse.js und synchronisiert die Query in der URL (`?query=`).
 - `/blog` bietet kombinierbare Filter für Hashtags und Topics über `TagChips`.
 - Hashtags werden aus Text + Whitelist generiert; Stopwortliste findest du unter `src/lib/content/stopwords.de.txt`.
+- Konsistente Icons (siehe `src/lib/components/icons`) helfen, Navigationspfade wiederzuerkennen.
 
 ## Deployment (Vercel)
 

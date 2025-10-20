@@ -4,7 +4,9 @@
   Systempräferenzen (Light/Dark, hoher Kontrast, reduzierte Bewegung), erlaubt
   manuelle Umschaltung und persistiert die Auswahl in `localStorage`.
   Außerdem wird das `<meta name="theme-color">`-Tag live aktualisiert, damit
-  Browser-Chrome (z. B. auf Mobilgeräten) die korrekte Farbe anzeigen.
+  Browser-Chrome (z. B. auf Mobilgeräten) die korrekte Farbe anzeigen. Ein kleines
+  Icon visualisiert den Status und rotiert dezent, solange keine Bewegungsreduktion
+  angefragt ist.
 -->
 <script lang="ts">
   /**
@@ -14,6 +16,7 @@
    */
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
+  import Icon from './icons/Icon.svelte';
 
   type Theme = 'light' | 'dark' | 'system';
 
@@ -119,11 +122,16 @@
   Tailwind-Utility-Klassen.
 -->
 <button
-  class="focus-ring rounded-full border border-muted/40 bg-surface/80 px-4 py-2 text-sm font-medium text-emphasis shadow-sm transition hover:border-accent hover:text-accent"
+  class="focus-ring inline-flex items-center gap-2 rounded-full border border-muted/40 bg-surface/80 px-4 py-2 text-sm font-medium text-emphasis shadow-sm transition hover:border-accent hover:text-accent"
   type="button"
   aria-live="polite"
   aria-label={themeLabel[$theme]}
+  title={themeLabel[$theme]}
   on:click={rotateTheme}
+  data-theme-state={$theme}
 >
+  <span class="theme-toggle-icon relative flex h-5 w-5 items-center justify-center">
+    <Icon name="sun-moon" size={18} />
+  </span>
   <span>{$theme === 'system' ? 'System' : $theme === 'light' ? 'Hell' : 'Dunkel'}</span>
 </button>

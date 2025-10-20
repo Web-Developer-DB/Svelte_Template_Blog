@@ -1,17 +1,21 @@
 <!--
   @file src/lib/components/DesktopNav.svelte
   @description Desktop-Navigation als Sidebar. Sie zeigt Projektinformationen,
-  Navigationslinks und den Theme-Toggle. Die Sidebar nutzt CSS-Grid, damit sie
-  im Layout als feste Spalte fungiert.
+  Navigationslinks und den Theme-Toggle. Ein kleines Icon-Set unterstützt die
+  Orientierung und die Einträge erhalten ein sanftes Hover-Lift, während CSS-Grid
+  die Sidebar als feste Spalte im Layout verankert.
 -->
 <script lang="ts">
   import { page } from '$app/stores';
   import ThemeToggle from './ThemeToggle.svelte';
+  import Icon from './icons/Icon.svelte';
+  import type { IconName } from './icons/Icon.svelte';
 
   interface NavItem {
     label: string;
     description: string;
     href: string;
+    icon: IconName;
   }
 
   export let totalPosts = 0;
@@ -20,22 +24,26 @@
     {
       label: 'Start',
       description: 'Überblick & neueste Artikel',
-      href: '/'
+      href: '/',
+      icon: 'home'
     },
     {
       label: 'Blog',
       description: 'Alle Beiträge, Filter & Sortierung',
-      href: '/blog'
+      href: '/blog',
+      icon: 'articles'
     },
     {
       label: 'Tags',
       description: 'Hashtags & Themen auf einen Blick',
-      href: '/tags'
+      href: '/tags',
+      icon: 'tags'
     },
     {
       label: 'Suche',
       description: 'Volltext-Recherche & Vorschläge',
-      href: '/search'
+      href: '/search',
+      icon: 'search'
     }
   ];
 
@@ -64,12 +72,20 @@
       {#each items as item (item.href)}
         <a
           href={item.href}
-          class="block rounded-lg border border-transparent px-4 py-3 transition hover:border-accent/60 hover:bg-accent/5"
+          class="group anim-soft-hover flex items-start gap-3 rounded-lg border border-transparent px-4 py-3 hover:border-accent/60 hover:bg-accent/5"
           class:border-accent={isActive(item.href, $page.url.pathname)}
           class:text-accent={isActive(item.href, $page.url.pathname)}
         >
-          <h2 class="text-base font-semibold">{item.label}</h2>
-          <p class="text-xs text-muted/80">{item.description}</p>
+          <span
+            class="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent transition group-hover:bg-accent group-hover:text-surface"
+            aria-hidden="true"
+          >
+            <Icon name={item.icon} size={18} />
+          </span>
+          <span class="space-y-1">
+            <h2 class="text-base font-semibold">{item.label}</h2>
+            <p class="text-xs text-muted/80">{item.description}</p>
+          </span>
         </a>
       {/each}
     </nav>

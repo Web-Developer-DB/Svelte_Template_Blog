@@ -2,8 +2,9 @@
   @file src/lib/components/ContentCard.svelte
   @description Präsentiert einen Blogpost als Karte innerhalb von Listenansichten
   (Startseite, /blog, /search). Neben Titel, Datum und Auszug werden Topics als
-  Badges und Hashtags als Inline-Liste dargestellt. Die Komponente ist stark
-  kommentiert, um Layout- und A11y-Entscheidungen nachvollziehbar zu machen.
+  Badges und Hashtags als Inline-Liste dargestellt. Zusätzlich erhält jede Karte
+  eine subtile Eingangsanimation (`anim-fade-in-up`) sowie einen Hover-Lift, um
+  Interaktivität zu signalisieren, bleibt aber für `prefers-reduced-motion` ruhig.
 -->
 <script lang="ts">
   import dayjs from 'dayjs';
@@ -18,7 +19,7 @@
 </script>
 
 <article
-  class="group flex flex-col gap-4 rounded-xl border border-muted/30 bg-surface/70 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+  class="group anim-fade-in-up anim-soft-hover flex flex-col gap-4 rounded-xl border border-muted/30 bg-surface/70 p-6 shadow-sm hover:shadow-lg"
 >
   <!-- Titel + Link -->
   <header>
