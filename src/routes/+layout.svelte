@@ -55,7 +55,7 @@
       <slot />
     </div>
     <footer class="mt-16 border-t border-muted/20 bg-surface/80 py-8 text-center text-xs text-muted/70">
-      © {new Date().getFullYear()} Lernblog. Content-Lizenz: CC BY 4.0.
+      <p>© {new Date().getFullYear()} Lernblog · MIT License · Created by Dimitri B.</p>
     </footer>
   </main>
 </div>
