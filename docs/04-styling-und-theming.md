@@ -25,9 +25,9 @@ Wichtige Highlights aus `tailwind.config.cjs`:
 
 1. Liest Nutzerpräferenz aus `localStorage`.
 2. Ermittelt System-Theme via `matchMedia('(prefers-color-scheme: dark)')`.
-3. Aktualisiert `document.documentElement.dataset.theme`.
-4. Schreibt `<meta name="theme-color">` um, damit Browser-Chrome passt.
-5. Lauscht auf `prefers-contrast` und setzt `data-contrast`.
+3. Aktualisiert `document.documentElement.dataset.theme` und setzt zusätzlich `data-theme-source`, um zu dokumentieren, ob System oder manuelle Auswahl aktiv ist.
+4. Aktualisiert `<meta name="theme-color">` anhand eines Mapping-Objekts, damit Browser-Chrome und Mobile-Bars die korrekte Farbe erhalten.
+5. Lauscht auf `prefers-contrast` und toggelt `data-contrast`, sodass Tailwind-Utilities darauf reagieren können.
 
 ## Komponenten anpassen
 

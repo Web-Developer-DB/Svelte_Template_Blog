@@ -13,7 +13,7 @@ Dieses Dokument vertieft, wie Daten vom Dateisystem über den Content-Indexer bi
 3. **`createPost()`** normalisiert Metadaten, generiert Auto-Hashtags und baut den `BlogPost`.
 4. **`getContentIndex()`** liefert `posts`, `hashtags`, `topics`, `searchDocuments`.
 5. **`+layout.ts`** ruft `getContentIndex()` auf und macht die Daten für alle Seiten verfügbar.
-6. **UI-Komponenten** (Listen, Suche, Detailansicht) verbrauchen diese Daten.
+6. **UI-Komponenten** (Listen, Suche, Detailansicht) verbrauchen diese Daten – die Suche greift zusätzlich auf `searchDocuments` zur schnellen Fuzzy-Suche zurück.
 
 ## Dateisystemstruktur
 
@@ -37,6 +37,7 @@ src/
 - **Caching:** Der Content-Index wird in einer Modul-Variable (`cache`) gehalten. Während der Entwicklung sorgt HMR dafür, dass bei Dateiänderungen der Cache neu erzeugt wird.
 - **SSG + CSR:** `prerender = true` erzeugt statische HTML-Dateien. Clientseitige Navigation sorgt dennoch für schnelle Wechsel.
 - **Alias-Pfade:** `$components`, `$content`, `$styles` erlauben kurze Importpfade und werden in `svelte.config.js` sowie `vite.config.ts` definiert.
+- **Vite-Serverzugriff:** `server.fs.allow` (siehe `vite.config.ts`) erlaubt dem Dev-Server, Dateien aus `/content` und `/docs` zu lesen, obwohl sie außerhalb von `src/` liegen.
 
 ## Erweiterungen
 

@@ -15,8 +15,9 @@ Dieses Dokument ist dein Startpunkt. Es erklärt Zielsetzung, Technik-Stack und 
 ## Tech-Stack auf einen Blick
 
 ```
-SvelteKit  •  TypeScript strict  •  Tailwind 3
-MDsveX     •  Fuse.js            •  @sveltejs/adapter-vercel
+SvelteKit 2  •  Svelte 5        •  TypeScript 5
+Tailwind 3   •  Vite 6          •  Fuse.js
+MDsveX       •  Adapter Vercel  •  Relative Images
 ```
 
 ## Architektur-Diagramm

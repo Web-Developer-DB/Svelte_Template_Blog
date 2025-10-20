@@ -2,8 +2,9 @@
   @file src/routes/search/+page.svelte
   @description Clientseitige Suche über alle Posts mittels Fuse.js. Unterstützt
   Titel, Auszug, Volltext, Hashtags und Topics. Die Suche reagiert auf URL-
-  Parameter (`?query=`) und aktualisiert diese bei Benutzereingaben, sodass Links
-  zu Suchergebnissen teilbar sind.
+  Parameter (`?query=`) und aktualisiert diese bei Benutzereingaben (mit
+  `replaceState`, `keepfocus`, `noscroll`), sodass Links zu Suchergebnissen
+  teilbar sind, ohne den Fokus zu verlieren.
 -->
 <script lang="ts">
   import Fuse from 'fuse.js';

@@ -10,7 +10,7 @@ Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet
 
 ## Highlights auf einen Blick
 
-- **SvelteKit + TypeScript (strict):** Moderne DX mit klaren Typen.
+- **SvelteKit 2 + Svelte 5 + TypeScript 5:** Moderne DX mit klaren Typen.
 - **Tailwind 3 + Container-Queries:** Responsives, komponentenorientiertes Design.
 - **MDsveX & Content-Autodiscovery:** Markdown, MDX und Svelte-Posts ohne manuelle Imports.
 - **Docs als Routen:** `/docs` rendert die Lernpfad-Markdowns direkt im Browser.
@@ -19,6 +19,7 @@ Willkommen in deinem kommentierten SvelteKit-Template! Dieses Repository richtet
 - **Automatisches Theming:** System-, Hell- und Dunkelmodus inkl. `prefers-contrast`.
 - **SEO & Feeds:** Meta-Tags, JSON-LD, Sitemap und RSS out of the box.
 - **Lehrmodus:** Jede Datei ist ausführlich kommentiert, Docs erklären die Architektur.
+- **Developer-Tooling:** Einheitliche Linting- und Format-Skripte für saubere Commits.
 
 ## Architektur-Überblick
 
@@ -47,7 +48,17 @@ npm run build       # Produktionsbuild erzeugen
 npm run preview     # Build lokal testen
 
 npm run check       # Svelte- und TypeScript-Checks
+npm run lint        # ESLint + Prettier + Svelte-Checks
+npm run lint:types  # Reiner Svelte-/TypeScript-Durchlauf
+npm run lint:style  # ESLint + Prettier im Check-Modus
+npm run format      # Formatiert Dateien mit Prettier
 ```
+
+## Qualitätssicherung & Workflow
+
+- **Vor jedem Commit:** `npm run lint` kombiniert Type-Checks, ESLint und Prettier-Checks.
+- **Gezielt formatieren:** Nutze `npm run format`, wenn ausschließlich Formatierungsfehler anliegen.
+- **CI-Platzhalter:** Der Workflow in `.github/workflows/ci.yml` enthält vorbereitete Schritte für Vitest, Playwright und Pa11y. Aktiviere oder passe sie an, sobald die zugehörigen Skripte existieren.
 
 ## Lernpfad („Starte hier“)
 

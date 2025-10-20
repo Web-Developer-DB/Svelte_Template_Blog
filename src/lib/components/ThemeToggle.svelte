@@ -4,9 +4,10 @@
   Systempräferenzen (Light/Dark, hoher Kontrast, reduzierte Bewegung), erlaubt
   manuelle Umschaltung und persistiert die Auswahl in `localStorage`.
   Außerdem wird das `<meta name="theme-color">`-Tag live aktualisiert, damit
-  Browser-Chrome (z. B. auf Mobilgeräten) die korrekte Farbe anzeigen. Ein kleines
-  Icon visualisiert den Status und rotiert dezent, solange keine Bewegungsreduktion
-  angefragt ist.
+  Browser-Chrome (z. B. auf Mobilgeräten) die korrekte Farbe anzeigen und
+  `data-theme-source` markiert, ob das Theme vom System oder manuell stammt.
+  Ein kleines Icon visualisiert den Status und rotiert dezent, solange keine
+  Bewegungsreduktion angefragt ist.
 -->
 <script lang="ts">
   /**
@@ -41,7 +42,7 @@
     window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
   /**
-   * @description Aktualisiert das Datenattribut auf `<html>` und setzt die Meta-Farbe.
+   * @description Aktualisiert die Theme-Datenattribute auf `<html>` und setzt die Meta-Farbe.
    * Bei `system` wird erneut in `prefers-color-scheme` reingehört.
    */
   const applyTheme = (value: Theme) => {

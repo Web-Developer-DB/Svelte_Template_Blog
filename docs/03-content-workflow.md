@@ -40,6 +40,8 @@ cover: "/images/dein-cover.svg" # optional
 
 Das Ergebnis landet in `post.autoHashtags`. In der UI werden manuelle Tags und Auto-Hashtags zusammen angezeigt.
 
+> **Standardparameter:** Tokens müssen mindestens zweimal vorkommen (`minOccurrences = 2`), um berücksichtigt zu werden. Begriffe aus der Whitelist (z. B. deine manuellen `tags`) werden dennoch angehängt, selbst wenn sie die Schwelle nicht erreichen.
+
 ## Workflow-Empfehlung
 
 1. **Entwurf schreiben:** Lege die Datei in `/content/blog` an.

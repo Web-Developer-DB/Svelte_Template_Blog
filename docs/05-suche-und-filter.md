@@ -28,7 +28,7 @@ const fuse = new Fuse(data.searchDocuments, {
 ## URL-Synchronisation
 
 - `SearchBar` dispatcht das `search`-Event nach 250 ms Debounce.
-- `runSearch()` aktualisiert `window.location.search` via `goto(..., { replaceState: true })`.
+- `runSearch()` aktualisiert `window.location.search` via `goto(..., { replaceState: true, keepfocus: true, noscroll: true })`, sodass Fokus und Scrollposition erhalten bleiben.
 - Reactive Statement lauscht auf `$page.url.searchParams`, sodass Back/Forward-Buttons funktionieren.
 
 ## Filter auf /blog
