@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/tags</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/search</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-05-deployment-vercel</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-05-barrierefreiheit-check</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-04-ux-im-web</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-04-seo-tipps</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-03-performance-tuning</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-03-auto-hashtags</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-02-content-architektur</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-02-darkmode-theming</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-01-responsive-design</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+<url>
+    <loc>https://example.com/blog/2025-01-hello-svelte</loc>
+    <lastmod>2025-10-20T00:18:52.296Z</lastmod>
+  </url>
+</urlset>

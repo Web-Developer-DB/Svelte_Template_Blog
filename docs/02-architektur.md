@@ -44,4 +44,4 @@ src/
 - **Drafts:** Füge ein Flag `draft: true` hinzu und filtere Beiträge im Production-Build.
 - **Remote-Content:** Wenn du CMS-Daten hinzuladen willst, koppel `getContentIndex()` mit Fetch-Requests und muxe lokale wie entfernte Inhalte.
 
-Nächster Stopp: [`03-content-workflow.md`](03-content-workflow.md) erklärt, wie du neuen Content erzeugst und welche Felder im Frontmatter erlaubt sind.
+Nächster Stopp: [`03-content-workflow`](./03-content-workflow) erklärt, wie du neuen Content erzeugst und welche Felder im Frontmatter erlaubt sind.

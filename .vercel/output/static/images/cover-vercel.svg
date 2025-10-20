@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="vercelGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#vercelGradient)" />
+  <polygon points="260,260 400,120 540,260" fill="#f3f4f6" />
+  <text x="50%" y="85%" font-size="32" fill="#e5e7eb" font-family="Inter, sans-serif" text-anchor="middle">
+    Deployment auf Vercel
+  </text>
+</svg>

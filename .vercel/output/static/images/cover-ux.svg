@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="uxGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#fb7185" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="32" fill="url(#uxGradient)" />
+  <g fill="#ffe4e6" opacity="0.9">
+    <circle cx="240" cy="190" r="52" />
+    <circle cx="400" cy="210" r="72" />
+    <circle cx="560" cy="180" r="52" />
+  </g>
+  <text x="50%" y="85%" font-size="34" fill="#fff1f2" font-family="Inter, sans-serif" text-anchor="middle">
+    UX Details
+  </text>
+</svg>
