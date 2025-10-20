@@ -26,7 +26,7 @@ export default defineConfig({
   },
   server: {
     fs: {
-      allow: [resolve('./content')]
+      allow: [resolve('./content'), resolve('./docs')]
     }
   }
 });

@@ -21,11 +21,11 @@
 }
 
 [data-theme='dark'] {
-  /* Dunkles Thema: helle Typo auf dunklen Flächen, Akzent bleibt kräftig */
-  --color-surface: 9 13 28; /* #090D1C */
-  --color-muted: 160 174 192; /* #A0AEC0 */
-  --color-accent: 106 132 255; /* #6A84FF */
-  --color-emphasis: 240 245 255; /* #F0F5FF */
+  /* Dunkles Thema: hellere Grundfläche + hohe Kontraste für Text und Icons */
+  --color-surface: 20 28 48; /* #141C30 */
+  --color-muted: 192 202 218; /* #C0CADE */
+  --color-accent: 148 161 255; /* #94A1FF */
+  --color-emphasis: 249 251 255; /* #F9FBFF */
   color-scheme: dark;
 }
 
@@ -52,6 +52,10 @@ body {
   scroll-behavior: smooth;
 }
 
+[data-theme='dark'] body {
+  color: rgb(var(--color-emphasis));
+}
+
 /* Hilfsklasse für Fokus-Markierungen (Accessible Outline) */
 .focus-ring:focus-visible {
   outline: 3px solid rgb(var(--color-accent));
@@ -65,6 +69,57 @@ body {
   color: rgb(var(--color-accent) / 0.85);
   text-decoration: none;
   transition: opacity 0.2s ease;
+}
+
+.prose {
+  color: rgb(var(--color-emphasis) / 0.93);
+}
+
+[data-theme='dark'] .prose {
+  color: rgb(var(--color-emphasis) / 0.95);
+}
+
+[data-theme='dark'] .prose a {
+  color: rgb(var(--color-accent));
+}
+
+[data-theme='dark'] .prose a:hover {
+  color: rgb(var(--color-accent) / 0.85);
+}
+
+[data-theme='dark'] .prose h1,
+[data-theme='dark'] .prose h2,
+[data-theme='dark'] .prose h3,
+[data-theme='dark'] .prose h4,
+[data-theme='dark'] .prose h5,
+[data-theme='dark'] .prose h6 {
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] .prose strong {
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] code,
+[data-theme='dark'] pre code {
+  background-color: rgb(var(--color-muted) / 0.5);
+  color: rgb(var(--color-emphasis));
+}
+
+[data-theme='dark'] pre {
+  background-color: rgb(var(--color-surface) / 0.95);
+  border: 1px solid rgb(var(--color-muted) / 0.4);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.3);
+}
+
+[data-theme='dark'] blockquote {
+  border-left-color: rgb(var(--color-accent) / 0.7);
+  background-color: rgb(var(--color-surface) / 0.9);
+  color: rgb(var(--color-emphasis) / 0.95);
+}
+
+[data-theme='dark'] hr {
+  border-color: rgb(var(--color-muted) / 0.35);
 }
 
 .theme-toggle-icon {
